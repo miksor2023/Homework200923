@@ -8,6 +8,10 @@ public class Main {
         //задача 2
         System.out.println("\nЗадача 2");
         chooseAppVersion(1, 2010);
+        //
+        //задача 3
+        System.out.println("\nЗадача 3");
+        calculateDeliveryTime(95);
     }
     public static void checkLeapYear(int year) {
         if (year >= 1584 && year%4 == 0 && (year%100 != 0 || year%400 == 0)) {
@@ -27,7 +31,16 @@ public class Main {
             System.out.println("Установите облегченную версию приложения для Android по ссылке");
         }
     }
-
-
+    public static void calculateDeliveryTime(int deliveryDistance) {
+        if (deliveryDistance <= 20) {
+            System.out.println("Потребуется дней: 1" );
+        } else if (deliveryDistance > 20 && deliveryDistance <= 60) {
+            System.out.println("Потребуется дней: 2" );
+        } else if (deliveryDistance > 60 && deliveryDistance <= 100) {
+            System.out.println("Потребуется дней: 3" );
+        } else {
+            System.out.println("Доставка невозможна" );
+        }
+    }
 }
 
