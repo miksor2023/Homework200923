@@ -11,7 +11,12 @@ public class Main {
         //
         //задача 3
         System.out.println("\nЗадача 3");
-        calculateDeliveryTime(95);
+        int deliveryTime = getDeliveryTime(15);
+        if (deliveryTime == 0) {
+            System.out.println("Доставка невозможна");
+        } else {
+            System.out.println("Доставка займёт " + deliveryTime + " дня");
+        }
     }
     public static void checkLeapYear(int year) {
         if (year >= 1584 && year%4 == 0 && (year%100 != 0 || year%400 == 0)) {
@@ -31,15 +36,15 @@ public class Main {
             System.out.println("Установите облегченную версию приложения для Android по ссылке");
         }
     }
-    public static void calculateDeliveryTime(int deliveryDistance) {
+    public static int getDeliveryTime(int deliveryDistance) {
         if (deliveryDistance <= 20) {
-            System.out.println("Потребуется дней: 1" );
+            return 1;
         } else if (deliveryDistance > 20 && deliveryDistance <= 60) {
-            System.out.println("Потребуется дней: 2" );
+            return 2;
         } else if (deliveryDistance > 60 && deliveryDistance <= 100) {
-            System.out.println("Потребуется дней: 3" );
+            return 3;
         } else {
-            System.out.println("Доставка невозможна" );
+            return 0;
         }
     }
 }
